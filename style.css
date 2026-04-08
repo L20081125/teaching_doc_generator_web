@@ -1,0 +1,49 @@
+/* 全局重置 */
+* { box-sizing: border-box; }
+body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+
+/* 滚动条 */
+.custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 10px; }
+.custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.2); }
+
+/* 动画 */
+@keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+}
+.animate-blob { animation: blob 7s infinite; }
+.animation-delay-2000 { animation-delay: 2s; }
+.animation-delay-4000 { animation-delay: 4s; }
+
+/* 主题变量 */
+:root {
+    --primary-from: 59, 130, 246; /* blue-500 */
+    --primary-to: 99, 102, 241;   /* indigo-500 */
+}
+.theme-emerald { --primary-from: 16, 185, 129; --primary-to: 5, 150, 105; }
+.theme-purple { --primary-from: 168, 85, 247; --primary-to: 124, 58, 237; }
+.theme-orange { --primary-from: 249, 115, 22; --primary-to: 234, 88, 12; }
+
+/* 应用主题 */
+.bg-gradient-primary { background: linear-gradient(to right, rgb(var(--primary-from)), rgb(var(--primary-to))); }
+.text-gradient-primary { background: linear-gradient(to right, rgb(var(--primary-from)), rgb(var(--primary-to))); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.shadow-primary { box-shadow: 0 10px 25px -5px rgba(var(--primary-from), 0.3); }
+.accent-primary { accent-color: rgb(var(--primary-from)); }
+
+/* Markdown 样式优化 */
+.prose { color: #e2e8f0; }
+.prose h1 { color: #fff; margin-top: 1.5em; margin-bottom: 0.5em; font-size: 1.75rem; font-weight: 700; letter-spacing: -0.025em; }
+.prose h2 { color: #cbd5e1; margin-top: 1.25em; margin-bottom: 0.5em; font-size: 1.5rem; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.25em; }
+.prose h3 { color: #94a3b8; margin-top: 1em; margin-bottom: 0.5em; font-size: 1.25rem; font-weight: 600; }
+.prose p { margin-bottom: 0.75em; line-height: 1.75; color: #cbd5e1; }
+.prose ul, .prose ol { margin-bottom: 0.75em; padding-left: 1.5em; list-style-type: disc; color: #cbd5e1; }
+.prose li { margin-bottom: 0.25em; }
+.prose strong { color: #f1f5f9; font-weight: 700; }
+.prose blockquote { border-left-color: rgb(var(--primary-from)); color: #94a3b8; font-style: italic; background: rgba(255,255,255,0.03); padding: 0.5em 1em; border-radius: 0.5em; }
+.prose code { background: rgba(255,255,255,0.1); color: #cbd5e1; padding: 0.2em 0.4em; border-radius: 0.25em; font-size: 0.875em; }
+.prose pre { background: #0f172a; padding: 1em; border-radius: 0.5em; overflow-x: auto; border: 1px solid rgba(255,255,255,0.1); }
+.prose pre code { background: transparent; color: inherit; padding: 0; }
